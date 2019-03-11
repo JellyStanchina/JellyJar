@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCWA_HelloWorld", "ANCWA_HelloWorld.csproj", "{A4137703-C72C-464B-98EC-1FD5E1BFAF54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANC_WA", "ANC_WA.csproj", "{A4137703-C72C-464B-98EC-1FD5E1BFAF54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
