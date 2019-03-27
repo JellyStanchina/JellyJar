@@ -1,0 +1,548 @@
+
+
+https://www.ruby-lang.org
+
+A dynamic, open source programming language with a focus on simplicity and productivity. 
+It has an elegant syntax that is natural to read and easy to write.
+
+Notepad++ Ruby setup step:
+http://www.rubytips.org/2011/12/22/using-notepad-for-writing-ruby-programs-in-windows/
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+***********************************************************************************************************
+
+Tutorials complete:
+https://www.ruby-lang.org
+- Try Ruby! (in your browser)
+  - https://ruby.github.io/TryRuby/
+- Ruby in Twenty Minutes
+  - https://www.ruby-lang.org/en/documentation/quickstart/
+
+
+
+
+Tutorial in progress:
+https://www.ruby-lang.org
+- Documentation
+  - https://www.ruby-lang.org/en/documentation/
+    - Content \ Variables, constants, and arguments
+    - https://www.ruby-lang.org/en/documentation/faq/4/
+
+
+
+
+
+Maybe:
+https://www.ruby-lang.org
+- Documentation
+  - https://www.ruby-lang.org/en/documentation/
+    - http://rubykoans.com/windows/
+      - The Path to Enlightenment
+
+
+
+VS Code
+Good Microsoft Scriting IDE
+https://code.visualstudio.com/
+https://code.visualstudio.com/docs?start=true
+
+
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+
+
+
+
+
+https://rubyinstaller.org
+WITH DEVKIT
+- Ruby+Devkit 2.5.3-1 (x64)
+
+
+Try Ruby code in your browser
+http://ruby.github.io/TryRuby/playground/
+
+
+
+Method: Put things to the screen, to cause them all to output instead of the last
+puts 4 * 10
+puts 5 - 12
+puts 30 / 4
+
+Method: Reverse a string
+"Joey".reverse
+
+Method: Character count
+"Joey".length
+
+Method: A string multiple times
+"Joey" * 9
+- You cannot reverse a number
+
+Method: Conversion
+To String: .to_s
+To Integer: .to_i
+To Array: .to_a
+
+Create an array
+[12, 47, 35, 67]
+
+Method: Highest number in array
+[12, 47, 35].max
+
+Variable: array
+ticket = [12, 47, 35]
+
+Variable: recall variable
+ticket
+
+Array: Sort
+ticket.sort!
+- Changes the variable, not just an output
+
+Array: Output via element number
+puts ticket[0]
+puts ticket[1]
+puts ticket[2]
+
+Method: String Replace
+poem.gsub("toast", "honeydew")
+
+Method: reverse the lines of a string
+puts poem.lines.reverse.join
+
+Create a hash
+{}
+- Little dictionary 
+- A hash is like an array, only every one of its elements has a name
+- Hashes are pairs of keys and values
+- Declare one element of the hash
+books["Gravitys Rainbow"] = :splendid
+- :splendid is a symbol and not a string
+  - Symbols are cheaper than strings (in terms of computer memory.)
+  - A symbol tells you that is not just any old word but has a meaning within your program.
+
+Output Hash to the screen
+puts books
+
+Method: Amount of elements in the hash
+puts books.length
+
+Output Symbol (without the under-score)
+puts books["Gravitys Rainbow"]
+
+
+Create a new hash to give totals from another hash
+ratings = Hash.new {0}
+books.values.each {
+  |rate|
+  ratings[rate] += 1
+}
+puts ratings
+
+Block
+- code within braces
+
+Method: To repeat a block
+5.times { print "Odelay! " }
+- Utilize the |time| to have an iterating variable for free
+5.times { 
+  |time|
+  print "Odelay! " + time.to_s
+}
+
+Create your own method
+def tame( number_of_shrews )
+  number_of_shrews.times {
+    puts "Tamed a shrew"
+  }
+  # return number_of_shrews
+  # .times returns it's final amount automatically
+end
+
+puts tame(5)
+
+
+Web Browser: Shortcut to open a tab of source
+CTL+U
+- Different formats will output
+  - Examples: rss, html, xml, & json
+
+
+Example method: get_shakey
+- Retrieves a Shakespeare works hash
+  - Collected from the internet
+  - JSON format
+{"William Shakespeare"=>{"1"=>{"title"=>"The Two Gentlemen of Verona", "finished"=>1591}, "2"=>{"title"=>"The Taming of the Shrew", "finished"=>1591}, "3"=>{"title"=>"Henry VI, Part 2", "finished"=>1591}}}
+{"William Shakespeare"=> {
+  "1"=>{
+    "title"=>"The Two Gentlemen of Verona",
+    "finished"=>1591
+  }, 
+  "2"=>{
+    "title"=>"The Taming of the Shrew",
+    "finished"=>1591
+  },
+  "3"=>{
+    "title"=>"Henry VI, Part 2",
+    "finished"=>1591
+  }
+}}
+
+
+# Loop outputing values of nodes from a specified node:
+s = get_shakey
+s["William Shakespeare"].each {
+  |key, val|
+  puts key.to_s + ": " + val["title"] + " - " + val["finished"].to_s
+}
+
+
+# Query of a hash
+def count_plays(year)
+  s = get_shakey
+
+  s["William Shakespeare"]
+    .select {
+      |k, v|
+      v["finished"] == year
+    }.each {
+      |key, val|
+      puts val["title"]
+    }.count
+end
+
+
+# OR without the s variable
+def count_plays(year)
+  get_shakey["William Shakespeare"].select {
+    |k, v|
+    v["finished"] == year
+  }.each {
+    |key, val|
+    puts val["title"]
+  }.count
+end
+# The .count at the end returns the count of elements
+
+puts count_plays(1591)
+
+
+# Upgrade to a span of years and formatting
+def print_plays(year_from, year_to)
+  get_shakey["William Shakespeare"].select {
+    |k, v|
+    year_from <= v["finished"] &&
+    year_to   >= v["finished"]
+  }.each {
+    |k, v|
+    puts "#{v["title"].ljust(30)} #{v["finished"]}"
+    # With -> and no aligning
+    # puts "#{v["title"]} -> #{v["finished"]}"
+  }
+end
+# The .ljust(30) alignes via the addition of spaces to spot 30 after the "title"
+
+print_plays(1600, 1605)
+# True is returned
+
+
+
+# Conditionals
+if 1 < 2
+  puts "It is true: 1 is less than 2"
+end
+
+puts "It is true: 1 is less than 2" if 1 < 2
+
+# If is a method that requires one parameter
+# if (<test-expresion>)
+#  Quotes not necessary but more organized
+puts true if (1)
+puts true if (1024)
+puts true if (true)
+puts false if (0)
+puts false if (false)
+
+puts false if (nil)
+puts false if ('xyz'.empty?)
+
+5 <= 10         # => true
+'abc' == 'def'  # => false
+true            # => true
+123456          # => true
+0               # => true
+nil             # => false
+'xyz'.empty?    # => false
+'a' > 5         # => error:
+                # comparison of String with
+                # Numeric failed
+
+# elsif & else available
+
+# More condition/loop possibilities
+# http://ruby-doc.org/core-2.6.2/doc/syntax/control_expressions_rdoc.html
+#  - if
+#  - elsif
+#  - else
+#  - unless / if not
+#  - .zero
+#  - case / when
+#  - while
+#  - while true do
+#  - until
+#  - for
+#  - begin / end while
+#  - break / break if
+#  - next if
+#  - redo if
+#  - Flip-Flop expressions
+#  - .upto
+
+
+
+# Condition using the return of a method
+def hungry?(time_of_day_in_hours)
+  if (time_of_day_in_hours < 12)
+  	puts "Me hungry: " + time_of_day_in_hours.to_s
+ 	true
+  else
+  	puts "Me NO hungry: " + time_of_day_in_hours.to_s
+    false
+  end
+end
+
+def eat_an(what)
+  puts "Me eat #{what}"
+end
+
+eat_an 'apple' if hungry?(14)
+puts "\n"
+eat_an 'apple' if hungry?(10)
+
+
+
+# Classes
+# - Classes we already know: Hash, array, string
+
+# Create the class
+class Blurb
+  attr_accessor :content , :time , :mood
+end
+# attr_accessor is aa attribute method to add little variables to the class
+
+# Create a 1st instance of the Blurb class
+blurb1 = Blurb.new
+puts blurb1
+blurb1.content = "Today Mount Hood Was Stolen!"
+# Output is neat: #<Blurb:0x5c20>
+#   Each time you run this you get a new HEX number: #<Blurb:0x####>
+
+# An Object, that neat little package
+# Update that object (Class instance) of yours
+blurb1.time = Time.now
+blurb1.mood = :sick
+puts blurb1
+
+# Create an "initialize" method
+class Blurb
+  attr_accessor :content, :time, :mood
+
+  def initialize(mood, content="")
+    @time    = Time.now
+    @content = content[0..39]
+    @mood    = mood
+  end
+end
+
+Blurb.new.time
+
+
+# Create a 2nd instance of the Blurb class
+Blurb2 = Blurb.new :confused, "I can not believe Mt. Hood was stolen!"
+
+# Usage of Blurb2 methods
+myapp.add_a_blurb :moody, "Add Blurb here"
+myapp.add_a_blurb :moody, "Monkey"
+myapp.add_a_blurb :moody, "Banana"
+
+myapp.show_timeline
+
+
+# Moodified Version
+class Blurb
+  attr_accessor :content, :time, :mood
+
+  def initialize(mood, content="")
+    @time    = Time.now
+    @content = content[0..39]
+    @mood    = mood
+  end
+
+  def moodify
+    if    @mood == :sad
+      return ":-("
+    elsif @mood == :happy
+      return ":-)"
+    # Add other moods here
+    end
+
+    # The default mood
+    ":-|"
+  end
+end
+
+class Blurbalizer
+  def initialize(title)
+    @title  = title
+    @blurbs = []
+  end
+
+  def add_a_blurb(mood, content)
+    @blurbs << Blurb.new(mood, content)
+  end
+
+  def show_timeline
+    puts "Blurbalizer: #{@title} has #{@blurbs.count} Blurbs"
+
+    @blurbs.sort_by { |t|
+      t.time
+    }.reverse.each { |t|
+      puts "#{t.content.ljust(40)} #{t.moodify.ljust(5)} #{t.time}"
+    }
+  end
+end
+
+myapp.show_timeline
+
+
+
+******************************************************************************************************************
+******************************************************************************************************************
+10:06 AM 3/26/2019
+
+Interative Ruby Tutorial
+  - https://www.ruby-lang.org/en/documentation/quickstart/
+
+"Hello World"
+puts "Hello World!"
+3+2
+3**2
+Math.sqrt(9)
+Math.sin(1)
+Math.tan(1)
+
+a = 3 ** 2
+b = 4 ** 2
+Math.sqrt(a+b)
+
+def hi
+puts "Hello World!"
+end
+hi
+hi()
+
+def hi(name)
+puts name
+end
+hi("Bob")
+hi "Bob"
+
+def hi(name="George")
+puts name
+end
+hi "Bob"
+hi
+
+def hi(name="george")
+puts "Hello #{name.capitalize}"
+end
+hi "bob"
+hi
+
+class Greeter
+  def initialize(name="george")
+    @name = name
+  end
+  def say_hi
+    puts "Hi #{@name.capitalize}!"
+  end
+  def say_bye
+    puts "Bye #{@name.capitalize}!"
+  end
+end
+
+myGreeter = Greeter.new
+myGreeter.say_hi
+myGreeter = Greeter.new "ralph"
+myGreeter.say_bye
+
+
+Greeter.instance_methods
+Greeter.instance_methods(false)
+
+myGreeter.respond_to?("name")
+myGreeter.respond_to?("Foo")
+myGreeter.respond_to?("say_hi")
+myGreeter.respond_to?("say_bye")
+myGreeter.respond_to?("to_s")
+
+
+# This APPENDS to the existing Greeter class
+class Greeter
+  attr_accessor :name
+end
+# Adds funtionality of .name & .name=
+
+myGreeter = Greeter.new("Marty")
+myGreeter.respond_to?("name")
+myGreeter.respond_to?("name=")
+myGreeter.say_hi
+
+myGreeter.name="Betty"
+myGreeter
+myGreeter.name
+myGreeter.say_hi
+
+
+
+*****************************************************************
+*****************************************************************
+Quitting out of Interactive Ruby
+
+To quit IRB, type “quit”, “exit” or just hit Control-D.
+
+*****************************************************************
+*****************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

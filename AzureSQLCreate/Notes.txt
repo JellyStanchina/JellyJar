@@ -1,0 +1,31 @@
+
+
+PowerShell version Check
+$PSVersionTable.PSVersion
+
+
+To start working with Azure PowerShell, sign in with your Azure credentials.
+# Connect to Azure with a browser sign in token
+Connect-AzAccount
+
+
+
+Update the Azure PowerShell module
+You can update your Azure PowerShell installation by running Update-Module. This command does not uninstall older versions.
+Update-Module -Name Az
+
+
+
+https:/go.microsoft.com/fwlink/?LinkID=135170
+Get-ExecutionPolicy
+Get-ExecutionPolicy -List
+Get-ExecutionPolicy -Scope CurrentUser
+Set-ExecutionPolicy unrestricted
+
+
+Create a SQL db from Azure Bare Metal
+C:\src\JellyJar\AzureSQLCreate\AzureSQLCreate.ps1
+
+
+Import of a BACPAC file (Created with SSMS - SQL Server Management Studio)
+

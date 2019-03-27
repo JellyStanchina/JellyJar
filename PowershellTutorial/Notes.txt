@@ -1,0 +1,10 @@
+
+
+Current Tutorial:
+https://devblogs.microsoft.com/scripting/author/the-scripting-guys/
+
+Currently at:
+	Parse HTML and pass to Cognitive Services Text-to-Speech
+	https://devblogs.microsoft.com/scripting/parse-html-and-pass-to-cognitive-services-text-to-speech/
+	
+
