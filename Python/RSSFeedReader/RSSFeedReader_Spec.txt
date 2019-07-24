@@ -1,4 +1,14 @@
 
 
 Environment: GitHub, Ninja
+- Use a Windows based PC
+- Install GitHub Desktop for Windows: https://central.github.com/deployments/desktop/desktop/latest/win32
+  - Create a Repo \ Branch \ Pull Request & Project for the purpose of this task
+- Install Ninja for Windows: https://www.dropbox.com/s/oglejv177rrt8zw/ninja-ide-2.3.exe
+  - Use Ninja as the editor for this project
+  - Configure the editor environment to suit your working style
+
 Create an "RSS Feed Reader" Python script to output the results of a request from hard-coded RSS feed URL
+
+Notes:
+- RSS/Python Beginner's instructions: https://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
