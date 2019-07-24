@@ -1,0 +1,4 @@
+
+
+Environment: GitHub, Ninja
+Create an "RSS Feed Reader" Python script to output the results of a request from hard-coded RSS feed URL
