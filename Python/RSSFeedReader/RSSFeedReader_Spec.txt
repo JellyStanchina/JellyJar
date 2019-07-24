@@ -1,14 +1,4 @@
 
 
-Create Environment
-- Source Control: GitHub
-- Bug Tracking and Program Management: GitHub
-- IDE: 
-
-Application:
-- Name: RSS Feed Reader
-- Type: Windows Command Line EXE app
-- Behavior:
-  - Run EXE
-  - Output to the screen the result of request for hard coded RSS feed URL
-
+Environment: GitHub, Ninja
+Create an "RSS Feed Reader" Python script to output the results of a request from hard-coded RSS feed URL
