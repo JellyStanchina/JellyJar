@@ -2,10 +2,16 @@
 Development Environment Setup
 See DevelopmentEnvironmentSetup_Spec.txt
 
-Create an "RSS Feed Reader" Python script to output the results of a request from hard-coded RSS feed URL
+1) Create an "RSS Feed Reader" Python script to output the results of a request from hard-coded RSS feed URL
 - Targeted RSS Feed: http://www.motortrend.com/widgetrss/motortrend-stories.xml
+
+2) Upgrade the "RSS Feed Reader" to STDOUT only the title nodes
 
 Notes:
 - RSS/HTTP/Python:
-    https://docs.python.org/3/library/http.client.html
+    https://realpython.com/python-requests/
+    https://www.geeksforgeeks.org/xml-parsing-python/
+    https://docs.python.org/
+    https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree
+
 
