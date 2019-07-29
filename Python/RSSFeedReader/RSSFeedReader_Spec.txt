@@ -13,5 +13,11 @@ Notes:
     https://www.geeksforgeeks.org/xml-parsing-python/
     https://docs.python.org/
     https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree
+    https://realpython.com/python-requests/
+    https://2.python-requests.org//en/master/user/quickstart/#response-content
+
+
+
+
 
 
