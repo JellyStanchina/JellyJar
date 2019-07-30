@@ -1,0 +1,35 @@
+
+Development Environment Setup
+- Python, GitHub, Ninja
+
+
+- Use a Windows based PC
+
+- Install Python for Windows
+  - https://www.python.org/downloads/
+    - Install to: %LOCALAPPDATA%\Programs\Python\Python<Release #>
+
+- Add the local Python install location to the System Environment Path
+  ;%LOCALAPPDATA%\Programs\Python\Python<Release #>;
+  - Close and re-open CMD window
+  - python --version
+
+- Install PIP
+  - Download: get-pip.py
+    - https://pip.pypa.io/en/stable/installing/
+  - Copy to %LOCALAPPDATA%\Programs\Python\Release #>
+  - pushd %LOCALAPPDATA%\Programs\Python\Release #>
+  - python get-pip.py
+
+- Add to PIP location to the System Path:
+    ;%LOCALAPPDATA%\Programs\Python\Release #>\Scripts;
+  - Close and re-open CMD window
+  - pip --version
+
+- Install GitHub Desktop for Windows: https://central.github.com/deployments/desktop/desktop/latest/win32
+  - Create a Repo \ master
+
+- Install IDE: Ninja for Windows
+  - http://ninja-ide.org/downloads/
+    - Under "Windows", use the "Download Installer" link
+
